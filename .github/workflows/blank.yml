@@ -27,9 +27,7 @@ jobs:
       - name: Compilar Proyecto en Modo Producción
         run: dotnet build WebAppRep.sln --configuration Release
 
-      - name: Subir Carpeta `publish` al Repositorio
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Publish
+        uses: crazy-max/ghaction-github-pages@v4.1.0
         with:
-          branch: deploy-branch  
-          folder: publish       
-          clean: true            
+          build_dir: publish/wwwroot         
