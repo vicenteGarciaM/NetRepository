@@ -1,0 +1,7 @@
+C:\NetRepository\publish\WebAppNet.exe
+C:\NetRepository\publish\appsettings.Development.json
+C:\NetRepository\publish\appsettings.json
+C:\NetRepository\publish\WebAppNet.dll
+C:\NetRepository\publish\WebAppNet.deps.json
+C:\NetRepository\publish\WebAppNet.runtimeconfig.json
+C:\NetRepository\publish\WebAppNet.pdb
