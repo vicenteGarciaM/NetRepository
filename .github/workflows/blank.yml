@@ -30,7 +30,6 @@ jobs:
       - name: Subir Carpeta `publish` al Repositorio
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          repository-name: "vicenteGarciaM/NetRepository/publish" 
           branch: deploy-branch  
           folder: publish       
           clean: true            
