@@ -1,0 +1,36 @@
+name: Deploy publish folder to GitHub
+
+on:
+  push:
+    branches:
+      - main  # Se ejecuta cuando hay cambios en la rama principal
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar Repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar .NET 8
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0'
+
+      - name: Restaurar Dependencias
+        run: dotnet restore
+
+      - name: Compilar Proyecto en Modo Producción
+        run: dotnet publish -c Release -o ./publish
+
+      - name: Subir Carpeta `publish` al Repositorio
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: "vicenteGarciaM/NetRepository" 
+          branch: deploy-branch  
+          folder: publish       
+          clean: true            
